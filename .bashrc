@@ -102,6 +102,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+export DOCKER_HOST=tcp://127.0.0.1:2375
+
+if [ -d /c/Users/marc/proj ]; then
+  # move to windows project directory
+  proj
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
