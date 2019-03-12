@@ -18,7 +18,6 @@ if [ -f "$HOME/git-completion.bash" ]; then
   alias gbc="gb --merged | egrep -v '(^\*|master)' | xargs git branch -d"
   alias ga="g add"
   alias gp="g push"
-  alias gpo="gp -u origin $(gb | grep '\*' | cut -d ' ' -f 2)"
   alias gpl="g pull"
   alias gd="g diff"
   alias gdi="gd --cached"
@@ -27,7 +26,14 @@ if [ -f "$HOME/git-completion.bash" ]; then
   alias gc="g commit"
   alias gca="gc --amend --no-edit"
   alias gr="g rebase"
+  alias grm="gr master"
   alias gri="gr -i master"
+  alias gf="g fetch"
+  alias gfp="gf -p"
+  alias grs="g reset"
+  alias gst="g stash"
+  alias gstp="gst pop"
+  alias gsh="g show"
   alias git-changelog="g log --oneline --no-merges --no-decorate"
 
   __git_complete g __git_main
@@ -37,6 +43,8 @@ if [ -f "$HOME/git-completion.bash" ]; then
   __git_complete gp _git_push
   __git_complete ga _git_add
   __git_complete gr _git_rebase
+  __git_complete gst _git_stash
+  __git_complete gst _git_show
 fi
 
 if [ -d /c/Users/marc/proj ]; then
